@@ -14,3 +14,13 @@ app.use(express.json());
 
 // Setting up middleware to serve static files
 app.use(express.static("public"));
+
+//Defining routing to home page and notes page 
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/index.html"));
+});
+
+app.get("/notes", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/notes.html"));
+});
+
