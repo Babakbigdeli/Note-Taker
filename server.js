@@ -11,3 +11,6 @@ var PORT = process.env.PORT || 3000;
 // Setting up the express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Setting up middleware to serve static files
+app.use(express.static("public"));
